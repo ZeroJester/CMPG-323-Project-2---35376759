@@ -11,5 +11,6 @@
     <WebStackScaffolding_DbContextTypeFullName>Project2_35376759.Models.ConnectedOfficeContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\Properties\PublishProfiles\ConnectedOffice35376759 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JWTAuthentication.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Project2_35376759.Models;
 
 namespace Project2_35376759.Controllers
 {
 
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : Controller
@@ -22,14 +26,15 @@ namespace Project2_35376759.Controllers
             _context = context;
         }
 
-        // GET: Categories
+
+        //Return all Categories
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
             return await _context.Category.ToListAsync();
         }
 
-        // GET: Categories/Get/id
+        //Return Category by ID
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategoryById(Guid? id)
         {
@@ -50,8 +55,9 @@ namespace Project2_35376759.Controllers
 
 
 
-        // PUt: Categories/Add
-        [HttpPut("{id}")]
+        //Edit existing Category
+        [HttpPut]
+        [Route("Edit/{id}")]
         public async Task<IActionResult> PutCategory(Guid id, Category category)
         {
             if (id != category.CategoryId)
@@ -81,8 +87,9 @@ namespace Project2_35376759.Controllers
         }
 
 
-        // POST: Categories/Edit/id
+        //Add new Category
         [HttpPost]
+        [Route("Add")]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
             _context.Category.Add(category);
@@ -106,8 +113,9 @@ namespace Project2_35376759.Controllers
             return CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
         }
 
-        // DELETE: Category/Delete/id
-        [HttpDelete("{id}")]
+        //Delete existing Category
+        [HttpDelete]
+        [Route("Delete/{id}")]
         public async Task<ActionResult<Category>> DeleteCategory(Guid id)
         {
             var category = await _context.Category.FindAsync(id);
@@ -122,6 +130,49 @@ namespace Project2_35376759.Controllers
 
             return category;
         }
+
+
+        //Get Devices that matches CategoryId
+        [HttpGet]
+        [Route("Category/{id}")]
+        public async Task<ActionResult<Device>> GetDeviceByCategoryId(Guid id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                var dev = await _context.Device.FirstOrDefaultAsync(m => id == m.CategoryId);
+
+                if (dev == null)
+                {
+                    return NotFound();
+                }
+
+                return dev;
+            }
+            catch
+            {
+                return NotFound();
+            }
+
+        }
+
+
+        //Get number of Zones that matches CategoryId
+        [HttpGet]
+        [Route("NumberOfZones/{id}")]
+        public async Task<int> NumOfZonesPerCategory(Guid id)
+        {
+            var join = await _context.Device.Join(_context.Zone, firstentity => firstentity.CategoryId, configAccess => configAccess.ZoneId, (val1, val2) => new { FirstEntity = val1, SecondEntity = val2}).ToListAsync();
+
+            var c = _context.Device.Where(m => m.CategoryId == id).Count();
+
+            return c;
+        }
+
 
 
         //private method to check for existence

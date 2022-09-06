@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ using Project2_35376759.Models;
 namespace Project2_35376759.Controllers
 {
 
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class DevicesController : Controller
@@ -22,14 +23,15 @@ namespace Project2_35376759.Controllers
             _context = context;
         }
 
-        // GET: Devices
+        //Return all Devices
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Device>>> GetDevice()
         {
             return await _context.Device.ToListAsync();
         }
 
-        // GET: Devices/Get/id
+        
+        //Return Device by ID
         [HttpGet("{id}")]
         public async Task<ActionResult<Device>> GetDeviceById(Guid? id)
         {
@@ -50,8 +52,9 @@ namespace Project2_35376759.Controllers
 
 
 
-        // PUt: Devices/Add
-        [HttpPut("{id}")]
+        //Edit existing Device
+        [HttpPut]
+        [Route("Edit/{id}")]
         public async Task<IActionResult> PutDevice(Guid id, Device device)
         {
             if (id != device.DeviceId)
@@ -81,8 +84,9 @@ namespace Project2_35376759.Controllers
         }
 
 
-        // POST: Devices/Edit/id
+        //Add new Device
         [HttpPost]
+        [Route("Add")]
         public async Task<ActionResult<Device>> PostDevice(Device device)
         {
             _context.Device.Add(device);
@@ -106,8 +110,9 @@ namespace Project2_35376759.Controllers
             return CreatedAtAction("GetDevice", new { id = device.DeviceId }, device);
         }
 
-        // DELETE: Device/Delete/id
-        [HttpDelete("{id}")]
+        //Delete existing Device
+        [HttpDelete]
+        [Route("Delete/{id}")]
         public async Task<ActionResult<Device>> DeleteDevice(Guid id)
         {
             var device = await _context.Device.FindAsync(id);
