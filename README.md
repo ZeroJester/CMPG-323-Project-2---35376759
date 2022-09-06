@@ -68,3 +68,6 @@
 
 #### Project Description
 This project focusses on the development of an API. The API acts as an intermediary between the database and the endpoints on the website. The goal of the API is to ensure safety and integrity of data, but to also allow multiple users to interact with the data in the database. This is a much safer method than to directly access the database and edit the values inside the database in this way. The API allows access to the database (if authorized) so that many different employees are able to use the data in the database.
+
+
+(reference list document is in the project folder as "Project2-Links.txt")
