@@ -31,36 +31,38 @@
 
 ## Endpoints and Additional Aspects
 ###Authenticate
-1./api/Authenticate/login
-2./api/Authenticate/register
-3./api/Authenticate/register-admin
+1. /api/Authenticate/login
+2. /api/Authenticate/register
+3. /api/Authenticate/register-admin
 
 ### Categories
-1./api/Categories
-2./api/Categories/{id}
-3./api/Categories/Edit/{id}
-4./api/Categories/Add
-5./api/Categories/Delete{id}
-6./api/Categories/Category/{id}
-7./api/Categories/NumberOfZones/{id}
+1. /api/Categories
+2. /api/Categories/{id}
+3. /api/Categories/Edit/{id}
+4. /api/Categories/Add
+5. /api/Categories/Delete{id}
+6. /api/Categories/Category/{id}
+7. /api/Categories/NumberOfZones/{id}
 
 ### Devices
-1./api/Devices
-2./api/Devices/{id}
-3./api/Devices/Edit/{id}
-4./api/Devices/Add
-5./api/Devices/Delete{id}
+1. /api/Devices
+2. /api/Devices/{id}
+3. /api/Devices/Edit/{id}
+4. /api/Devices/Add
+5. /api/Devices/Delete{id}
 
 ### Zones
-1./api/Zones
-2./api/Zones/{id}
-3./api/Zones/Edit/{id}
-4./api/Zones/Add
-5./api/Zones/Delete{id}
-6./api/Zones/Devices/{id}
+1. /api/Zones
+2. /api/Zones/{id}
+3. /api/Zones/Edit/{id}
+4. /api/Zones/Add
+5. /api/Zones/Delete{id}
+6. /api/Zones/Devices/{id}
 
 ### Additional Aspects
 1. Every controller needs authorization before using it
 2. Try-catch statements to catch basic errors
 3. Added private verification methods to verify existence of objects
 
+#### Project Description
+This project focusses on the development of an API. The API acts as an intermediary between the database and the endpoints on the website. The goal of the API is to ensure safety and integrity of data, but to also allow multiple users to interact with the data in the database. This is a much safer method than to directly access the database and edit the values inside the database in this way. The API allows access to the database (if authorized) so that many different employees are able to use the data in the database.
