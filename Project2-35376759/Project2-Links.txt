@@ -1,0 +1,13 @@
+https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy
+https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy#:~:text=The%20GitHub%20flow%20branching%20strategy%20is%20a%20relatively,flow%2C%20the%20main%20branch%20contains%20your%20production-ready%20code.
+https://stackoverflow.com/questions/57066856/command-dotnet-ef-not-found
+https://docs.microsoft.com/en-us/answers/questions/786471/unable-to-connect-to-azure-sql-when-deny-public-ne.html
+https://stackoverflow.com/questions/63976597/external-tables-not-working-when-deny-public-network-access-is-set-to-yes
+https://www.c-sharpcorner.com/article/introduction-to-sql-database-query-editor-in-azure-portal/
+https://docs.microsoft.com/en-us/azure/mysql/single-server/how-to-connection-string
+https://docs.microsoft.com/en-za/azure/azure-sql/database/connectivity-settings?view=azuresql&tabs=azure-portal#deny-public-network-access
+https://www.youtube.com/watch?v=ao1OWqLV78g
+https://www.youtube.com/watch?v=7a7zYOTTXRs
+https://stackoverflow.com/questions/50547314/please-specify-valid-openapi-specification-file
+https://stackoverflow.com/questions/50209122/swashbuckle-swagger-asp-net-core-failed-to-load-api-definition
+
