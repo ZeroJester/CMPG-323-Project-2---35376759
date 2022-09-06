@@ -1,11 +1,12 @@
 # CMPG-323-Project-2---35376759
 
 ## How to register?
-1. Click on the "/api/Authenticate/register" or "/api/Authenticate/register-admin"  tab under the Authenticate endpoint
-2. Click on the "Try it out" button
-3. Enter required values
-4. Click on the "Execute" button
-5. Your account has now been registered
+1. Go to the following link: https://connectedoffice35376759.azurewebsites.net/swagger/index.html
+2. Click on the "/api/Authenticate/register" or "/api/Authenticate/register-admin"  tab under the Authenticate endpoint
+3. Click on the "Try it out" button
+4. Enter required values
+5. Click on the "Execute" button
+6. Your account has now been registered
 
 ## How to Authorize?
 (details provided for the purpose of testing the API)
