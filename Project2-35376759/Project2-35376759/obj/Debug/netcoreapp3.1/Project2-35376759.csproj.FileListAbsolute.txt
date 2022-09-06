@@ -385,3 +385,8 @@ C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-353767
 C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Project2-35376759.dll
 C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Project2-35376759.pdb
 C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Project2-35376759.genruntimeconfig.cache
+C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Create.cshtml.g.cs
+C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Delete.cshtml.g.cs
+C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Details.cshtml.g.cs
+C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Edit.cshtml.g.cs
+C:\Users\Marcel\Desktop\GithubRepo\CMPG-323-Project-2---35376759\Project2-35376759\Project2-35376759\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Index.cshtml.g.cs

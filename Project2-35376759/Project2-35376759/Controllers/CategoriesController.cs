@@ -9,56 +9,57 @@ using Project2_35376759.Models;
 
 namespace Project2_35376759.Controllers
 {
+
     //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ZonesController : Controller
+    public class CategoriesController : Controller
     {
         private readonly ConnectedOfficeContext _context;
 
-        public ZonesController(ConnectedOfficeContext context)
+        public CategoriesController(ConnectedOfficeContext context)
         {
             _context = context;
         }
 
-        // GET: Zones
+        // GET: Categories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Zone>>> GetZone()
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
-            return await _context.Zone.ToListAsync();
+            return await _context.Category.ToListAsync();
         }
 
-        // GET: Zones/Get/id
+        // GET: Categories/Get/id
         [HttpGet("{id}")]
-        public async Task<ActionResult<Zone>> GetZoneByID(Guid? id)
+        public async Task<ActionResult<Category>> GetCategoryById(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var zone = await _context.Zone.FirstOrDefaultAsync(m => m.ZoneId == id);
-           
-            if (zone == null)
+            var category = await _context.Category.FirstOrDefaultAsync(m => m.CategoryId == id);
+
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return zone;
+            return category;
         }
 
-        
 
-        // PUt: Zones/Add
+
+        // PUt: Categories/Add
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutZone(Guid id, Zone zone)
+        public async Task<IActionResult> PutCategory(Guid id, Category category)
         {
-            if (id != zone.ZoneId)
+            if (id != category.CategoryId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(zone).State = EntityState.Modified;
+            _context.Entry(category).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +68,7 @@ namespace Project2_35376759.Controllers
 
             catch (DbUpdateConcurrencyException)
             {
-                if (!ZoneExists(id))
+                if (!CategoryExists(id))
                 {
                     return NotFound();
                 }
@@ -79,20 +80,20 @@ namespace Project2_35376759.Controllers
             return NoContent();
         }
 
-      
-        // POST: Zones/Edit/id
+
+        // POST: Categories/Edit/id
         [HttpPost]
-        public async Task<ActionResult<Zone>> PostZone(Zone zone)
+        public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-            _context.Zone.Add(zone);
+            _context.Category.Add(category);
 
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch(DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException)
             {
-                if (ZoneExists(zone.ZoneId))
+                if (CategoryExists(category.CategoryId))
                 {
                     return Conflict();
                 }
@@ -102,31 +103,31 @@ namespace Project2_35376759.Controllers
                 }
             }
 
-            return CreatedAtAction("GetZone", new { id = zone.ZoneId }, zone);
+            return CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
         }
 
-        // DELETE: Zones/Delete/id
+        // DELETE: Category/Delete/id
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Zone>> DeleteZone(Guid id)
+        public async Task<ActionResult<Category>> DeleteCategory(Guid id)
         {
-            var zone = await _context.Zone.FindAsync(id);
+            var category = await _context.Category.FindAsync(id);
 
-            if(zone == null)
+            if (category == null)
             {
                 return NotFound();
             }
 
-            _context.Zone.Remove(zone);
+            _context.Category.Remove(category);
             await _context.SaveChangesAsync();
 
-            return zone;
+            return category;
         }
 
-        
+
         //private method to check for existence
-        private bool ZoneExists(Guid id)
+        private bool CategoryExists(Guid id)
         {
-            return _context.Zone.Any(e => e.ZoneId == id);
+            return _context.Category.Any(e => e.CategoryId == id);
         }
     }
 }
