@@ -1,3 +1,5 @@
+//Marcel Joubert - 35376759
+
 using JWTAuthentication.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
