@@ -72,3 +72,6 @@ This project focusses on the development of an API. The API acts as an intermedi
 
 
 (reference list document is in the project folder as "Project2-Links.txt")
+
+![Screenshot 2022-09-12 131735](https://user-images.githubusercontent.com/85791779/189640582-b39c7439-fc8c-475f-951c-172c8275ef7f.png)
+
